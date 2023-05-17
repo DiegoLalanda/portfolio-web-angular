@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* letra importada desde google fonts 300, 600, 700*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;500;600;700&display=swap');
+
+/* config a todos los elementos del html */
+
+*{
+padding: 0;
+margin: 0;
+box-sizing:border-box;
+}
+
+/* seteo de colores */
+
+:root{
+--color-1:#ff3cce;
+--color-2: #ff3cce38;
+--color-3:#242424;
+--color-4:#2424243d;
+}
+
+/* configuracion general para el html */
+
+html{
+    font-size: 16px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    scroll-behavior: smooth;
+    color:var(--color-3)
+}
+
+/* configuracion general para el body */
+body{
+    min-height: 100vh;
+    counter-reset: item;
+    counter-reset: section;
+}
+
+/* edicion de títulos */
+
+.container_title_section{
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  counter-increment: section 1;
+  padding-bottom: 10px;
+}
+
+/*agrego un contador para las secciones*/
+    
+.container_title_section::before{
+  content: "0" counter(section)"."; 
+  margin-right: 5px;
+  color: var(--color-1)
+}
+  
+/*creando linea decorativa*/
+  
+.container_title_section ::after{
+  content: "";
+  width: 300px;
+  height: 2px;
+  display: block;
+  display: inline-block;
+
+  background-color: var(--color-1);
+  
+  position: relative;
+  left: 10px;
+  bottom: 10px;
+}
+
+/*------------edicion del srcollbar-------------*/
+
+body::-webkit-scrollbar {
+  width: 5px;               
+}
+body::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent        
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color:var(--color-1);    
+  border-radius: 20px;       
+}

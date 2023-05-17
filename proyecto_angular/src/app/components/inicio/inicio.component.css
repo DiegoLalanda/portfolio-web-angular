@@ -1,0 +1,93 @@
+
+.inicio {
+    position: relative;
+}
+
+
+/* Modificando el banner */
+
+.container_banner {
+    width: 100%;
+    height: 800px; /* Establece aquí la altura fija deseada en píxeles */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container_banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .container_banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    z-index: 0;
+  }
+  
+  
+
+/*modificando foto de perfil*/
+
+.container_inicio{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: var(--color-3);
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    border-radius: 50px;
+}
+
+
+.inicio .container_img img{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    margin-top: 40px;
+    border: 2px solid var(--color-1);
+    display: block;
+    margin: auto;
+    border-radius: 100%;
+}
+
+/*editando texto*/
+
+.container_inicio h1 {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #ff3cce;
+}
+.container_inicio h2 {
+    font-size: 20px;
+    color: white;
+    font-weight:normal;
+}
+
+/*editando redes*/
+
+.inicio .redes a{
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 100%;
+    width:  42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 20px 5px;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.inicio .redes a:hover{
+    background-color: var(--color-2);
+}

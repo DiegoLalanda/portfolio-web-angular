@@ -1,0 +1,140 @@
+.acercaDe{
+    padding: 100px 20px;
+}
+.acercaDe .container_section{
+    max-width: 1100px;
+    margin: auto;
+}
+.container_title_section{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    counter-increment: section 1;
+    padding-bottom: 10px;
+}
+.text_section p{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.text_section p span{
+    color: var(--color-1);
+    font-weight: bold;
+}
+.acercaDe .fila {
+    display: flex;  
+}
+.acercaDe .col {
+    width: 50%; 
+}
+.acercaDe .col h3{
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight:600;
+}
+.acercaDe .fila .col ul{
+    list-style: none;
+}
+.acercaDe .fila .col ul li{
+    margin: 12px 0;
+}
+.acercaDe .fila .col ul li strong{
+display: inline-block;
+color: var(--color-1);
+width: 120px;
+}
+.container_intereses{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container_intereses .interes{
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-4);
+    border-radius: 10px;
+    margin: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+.container_intereses .interes:hover{
+    background-color: var(--color-2);
+}
+.container_intereses .interes i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+    
+.acercaDe a{
+    text-decoration: none;
+    font-family:'IBM Plex Sans', sans-serif;
+    color: var(--color-1);
+}
+    
+.acercaDe button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--color-1);
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family:'IBM Plex Sans', sans-serif;
+    color: var(--color-1);
+    position: relative;
+    z-index: 10;
+    border-radius: 10px;
+}
+    
+/*creando animación de carga del boton*/
+    
+.acercaDe button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-2);
+    z-index: -1;
+    transition: 1s;
+}
+.acercaDe button:hover .overlay{
+    width: 100%;
+}
+    
+/*agrego un contador para las secciones*/
+    
+.container_title_section::before{
+    content: "0" counter(section)"."; 
+    margin-right: 5px;
+    color: var(--color-1)
+}
+    
+/*creando linea decorativa*/
+    
+.container_title_section ::after{
+    content: "";
+    width: 300px;
+    height: 2px;
+    display: block;
+    display: inline-block;
+
+    background-color: var(--color-1);
+    
+    position: relative;
+    left: 10px;
+    bottom: 10px;
+}
+
+/*------------ seccion responsive-----------------------------*/
+
+@media screen and (max-width:700px){
+
+    .acercaDe .fila{
+        display: block;
+    }
+    .acercaDe .fila .col{
+        width:fit-content;
+    }
+}

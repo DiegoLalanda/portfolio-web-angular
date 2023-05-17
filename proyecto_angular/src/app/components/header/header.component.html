@@ -1,0 +1,50 @@
+<div class="container_header">
+
+    <header class="header">
+
+        <!-- logo ArgPrograma-->
+
+        <div class="container_logo">
+            <a href="#inicio"><img src="assets\images\logo arg programa.png" alt="Logo" title="Logo"></a>
+        </div>
+
+        <!-- navegación -->
+
+        <div class="container_navegation">
+
+            <!-- menu de navegación-->
+
+            <nav id="nav">
+                <ul>
+                    <!-- li*4>a para crear 4 elementos de la lista, cada una con un link-->
+                    <li><a href="#acercaDe" (click)="seleccionar()" class="item_menu_link">
+                        Acerca de
+                    </a></li>
+                    <li><a href="#curriculum" (click)="seleccionar()" class="item_menu_link">
+                        Curriculum
+                    </a></li>
+                    <li><a href="#skills" (click)="seleccionar()" class="item_menu_link">
+                        Skills
+                    </a></li>
+                    <li><a href="#proyectos" (click)="seleccionar()" class="item_menu_link">
+                        Proyectos
+                    </a></li>
+                    <li><a href="#contacto" (click)="seleccionar()" class="item_menu_link">
+                        Contacto
+                    </a></li>
+                    <li>  <a href="#login" (click)="seleccionar()"><button id="button_login">Iniciar Sesión</button></a>
+                    </li>
+                    <li id="cerrar_sesion" style="display: none;"><a href="#">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- menu desplegable -->
+
+        <div class="nav_responsive" (click)="desplegarMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </header>
+
+</div>

@@ -1,0 +1,52 @@
+<section class="proyectos" id="proyectos">
+    <div class="container_section">
+        <div class="container_title_section">
+            <h2>Proyectos</h2> 
+        </div>
+
+        <!-- proyecto 1 -->
+
+        <div class="proyecto">
+            <div class="fila">
+                <div class="col">
+                    <div class="carrusel" #carrusel>
+                      <div class="img_effect" *ngFor="let foto of fotos">
+                        <img [src]="foto.url" [alt]="foto.descripcion">
+                      </div>
+                    </div>
+                  </div>    
+                  
+                <div class="col">
+                    <div class="description_proyecto">
+                        <p class="title">Proyecto Destacado</p>
+                        <h3 class="nombre">Portfolio Web</h3>
+                        <p class="information">Uno de mis proyectos más significativos ha sido el desarrollo de mi propio portfolio web personal. Utilicé las tecnologías web más comunes, como HTML, CSS, JavaScript y PHP, para crear un sitio web atractivo y funcional que muestra mis habilidades y logros como desarrollador web. Además de las habilidades técnicas, también incorporé técnicas de diseño y usabilidad para crear una experiencia de usuario agradable e intuitiva.</p>
+                        <div class="container_programming_languages">
+                            <ul>
+                                <li>
+                                    Javascript
+                                </li>
+                                <li>
+                                    Html
+                                </li>
+                                <li>
+                                    CSS
+                                </li>
+                                <li>
+                                    PHP
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="container_links">
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/DiegoLalanda"><i class="fa-brands fa-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
