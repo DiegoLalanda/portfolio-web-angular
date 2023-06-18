@@ -14,7 +14,6 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -50,7 +49,7 @@ public class AuthController {
     @PostMapping("/nuevo")
     public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindigResult){
         if (bindigResult.hasErrors())
-            return new ResponseEntity(new Mensaje("Campos ingresados incorrectamente o email invalido"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Campos mal ingresados o email invalido"), HttpStatus.BAD_REQUEST);
         
         if(usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario()))
             return new ResponseEntity(new Mensaje("Ese nombre de usuario ya existe"), HttpStatus.BAD_REQUEST);
@@ -76,7 +75,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindigResult){
     if (bindigResult.hasErrors())
-        return new ResponseEntity(new Mensaje("Campos ingresados incorrectamente"), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(new Mensaje("Campos mal ingresados"), HttpStatus.BAD_REQUEST);
     
     Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
     loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
