@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/contacto")
-@CrossOrigin(origins = "https://dlfrontend.web.app/")
+@CrossOrigin(origins = "https://dlfrontend.web.app")
 public class CContacto {
 
     @Autowired

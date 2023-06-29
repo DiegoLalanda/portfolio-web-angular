@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "https://dlfrontend.web.app/")
+@CrossOrigin(origins = "https://dlfrontend.web.app")
 @RequestMapping("/explab")
 public class CExperiencia {
 
