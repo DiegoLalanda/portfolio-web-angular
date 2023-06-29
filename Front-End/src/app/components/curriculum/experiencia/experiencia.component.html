@@ -1,0 +1,28 @@
+<div class="col derecha">
+    <h3>Experiencia</h3>
+    <button type="button" class="editExperiencia" routerLink="/nuevaexp" *ngIf="isLogged">
+        Nueva experiencia
+    </button>
+    <div class="item der" *ngFor="let Experiencia of expe">
+        <div class="logo_institucion">
+            <img src="{{Experiencia.imagenInstitucion}}" alt="insititución">
+        </div>
+        <h4>
+            {{Experiencia.nombreE}}
+        </h4>
+        <span class="lugar">{{Experiencia.nombreInstitucion}}</span>
+        <span class="fecha">{{Experiencia.anio}}</span>
+        <p>
+            {{Experiencia.descripcionE}}
+        </p>
+        <div class="botones" *ngIf="isLogged">
+            <button id="edit-cbutton" class="edit-button" routerLink="/editexp/{{Experiencia.id}}"><i
+                    class="fa-solid fa-pen-to-square"></i></button>
+            <button id="edit-cbutton" class="delete-button" (click)="delete(Experiencia.id)"><i
+                    class="fa-solid fa-trash"></i></button>
+        </div>
+        <div class="conectord">
+            <div class="circulod"></div>
+        </div>
+    </div>
+</div>

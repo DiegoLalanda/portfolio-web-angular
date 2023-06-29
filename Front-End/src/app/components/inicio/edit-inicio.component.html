@@ -1,0 +1,42 @@
+<!-- experiencia -->
+<div class="container-editexperiencia" *ngIf="persona">
+    <form class="form-editexperiencia" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <h2>Persona</h2>
+
+
+        <label for="nombre">
+            <h4 class="nombreE">Nombre de la persona</h4>
+        </label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre" required>
+
+        <label for="apellido">
+            <h4 class="nombreE">Apellido de la persona</h4>
+        </label>
+        <input type="text" id="apellido" name="apellido" [(ngModel)]="persona.apellido" required>
+
+        <label for="img">
+            <h4 class="descripcionE">Foto de perfil</h4>
+        </label>
+        <input type="file" id="img" name="img" [(ngModel)]="persona.img" required (change)="uploadImage($event)"
+            accept=".jpg, .jpeg, .png">
+
+        <div class="imagen_perfil">
+            <img [src]="imageService.url" width="200px">
+        </div>
+
+        <label for="banner">
+            <h4 class="descripcionE">Banner</h4>
+        </label>
+
+        <input type="file" id="banner" name="banner" [(ngModel)]="persona.banner" required
+            (change)="uploadBannerImage($event)" accept=".jpg, .jpeg, .png">
+
+        <div class="imagen_banner">
+            <img [src]="bannerService.url" width="200px">
+        </div>
+
+        <button class="editExperiencia">
+            Actualizar datos
+        </button>
+    </form>
+</div>

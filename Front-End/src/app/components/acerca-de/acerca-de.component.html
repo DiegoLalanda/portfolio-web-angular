@@ -3,16 +3,12 @@
         <div class="container_title_section">
             <h2>A Cerca De</h2>
         </div>
+        <button type="button" class="editExperiencia" routerLink="editacercade/1" *ngIf="isLogged">
+            Editar Sección
+        </button>
         <div class="text_section">
-            <p class="texto_acercaDe"> <span>¡Hola! Mi nombre es {{persona.nombre}} {{persona.apellido}}.</span> Soy Profesor de Educación Secundaria en Física y Desarrollador Full Stack en formación. Estoy muy entusiasmado con la posibilidad de fusionar mi experiencia en la educación con mis habilidades en el desarrollo web.<br>
-
-                <br>En mi carrera como docente, he tenido la oportunidad de trabajar con estudiantes de diferentes niveles y edades, lo que me ha brindado una perspectiva única sobre las necesidades y expectativas de cada uno de ellos. Además, mi experiencia en la educación me ha ayudado a desarrollar habilidades de comunicación, liderazgo y trabajo en equipo que son fundamentales en el ámbito del desarrollo web.<br>
-
-                <br>Actualmente, estoy enfocado en mi formación como Técnico Universitario en Desarrollo Web, con el objetivo de convertirme en un desarrollador Full Stack. Mi portfolio web, que he desarrollado por completo en PHP, JavaScript, HTML y CSS, es una muestra de mi capacidad para construir aplicaciones web de calidad.<br>
-
-                <br>Mi objetivo como desarrollador web es crear aplicaciones que sean intuitivas, eficientes y atractivas para los usuarios. Me apasiona el mundo del desarrollo web y estoy siempre en la búsqueda de nuevas herramientas y tecnologías para mejorar mis habilidades y conocimientos.<br>
-
-                <br>Gracias por visitar mi portfolio web y siéntete libre de contactarme si tienes alguna pregunta o quieres saber más sobre mi trabajo. ¡Espero poder trabajar contigo pronto!
+            <p class="texto_acercaDe"> <span>¡Hola! Mi nombre es {{persona?.nombre}} {{persona?.apellido}}.</span>
+                {{persona?.descripcion}}
             </p>
         </div>
 
@@ -56,33 +52,34 @@
             <!-- intereses -->
 
             <div class="col">
-            <h3>Intereses</h3>
-            <div class="container_intereses">
-                <div class="interes">
-                    <i class="fa-solid fa-gamepad"></i>
-                    <span>Juegos</span>
+                <h3>Intereses</h3>
+                <div class="container_intereses">
+                    <div class="interes">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Juegos</span>
+                    </div>
+                    <div class="interes">
+                        <i class="fa-solid fa-headphones"></i>
+                        <span>Música</span>
+                    </div>
+                    <div class="interes">
+                        <i class="fa-solid fa-futbol"></i>
+                        <span>Fútbol</span>
+                    </div>
+                    <div class="interes">
+                        <i class="fa-solid fa-flask"></i>
+                        <span>Ciencia</span>
+                    </div>
+                    <div class="interes">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <span>Docencia</span>
+                    </div>
                 </div>
-                <div class="interes">
-                    <i class="fa-solid fa-headphones"></i>
-                    <span>Música</span>
-                </div>  
-                <div class="interes">
-                    <i class="fa-solid fa-futbol"></i>
-                    <span>Fútbol</span>
-                </div>
-                <div class="interes">
-                    <i class="fa-solid fa-flask"></i>
-                    <span>Ciencia</span>
-                </div>
-                <div class="interes">
-                    <i class="fa-solid fa-chalkboard-user"></i>
-                    <span>Docencia</span>
-                </div>  
-            </div>
             </div>
         </div>
         <button>
-            <a href="images\CVDiegoLalanda-25años-ConcordiaEntreRíos-Nuevo.pdf" download> Descargar CV <i class="fa-solid fa-download"></i></a>
+            <a href="https://drive.google.com/file/d/1QXn3i8Em6IB5Xx4bhe0Ongj8jRHJUqHx/view?usp=sharing" download>
+                Descargar CV <i class="fa-solid fa-download"></i></a>
             <span class="overlay"></span>
         </button>
     </div>

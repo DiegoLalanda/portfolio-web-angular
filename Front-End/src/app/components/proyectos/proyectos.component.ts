@@ -1,45 +1,48 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Proyecto } from 'src/app/model/proyecto';
+import { ProyectoService } from 'src/app/service/proyecto.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
   styleUrls: ['./proyectos.component.css']
 })
-export class ProyectosComponent {
-  @ViewChild('carrusel') carruselRef!: ElementRef;
+export class ProyectosComponent implements OnInit {
+  proyectos: Proyecto[] = [];
 
-  fotos = [
-    { url: 'assets/images/proyecto1.png', descripcion: 'Foto 1' },
-    { url: 'assets/images/proyecto1_2.png', descripcion: 'Foto 2' },
-    { url: 'assets/images/proyecto1_3.png', descripcion: 'Foto 3' },
-    { url: 'assets/images/proyecto1_3.png', descripcion: 'Foto 3' }
-  ];
+  constructor(
+    private proyectoService: ProyectoService,
+    private tokenService: TokenService
+  ) { }
 
-  ngOnInit() {
-    // Iniciar el desplazamiento automático del carrusel
-    setInterval(() => {
-      this.scrollCarrusel(1); // Dirección hacia la derecha (1)
-    }, 3000); // Cambiar el intervalo según tus necesidades
-  }
+  isLogged = false;
 
-  scrollCarrusel(direction: number) {
-    const carruselElement: HTMLElement = this.carruselRef.nativeElement;
-    const carruselWidth = carruselElement.offsetWidth;
-    const scrollAmount = carruselWidth * direction;
-  
-    carruselElement.scrollTo({
-      left: carruselElement.scrollLeft + scrollAmount,
-      behavior: 'smooth'
-    });
-  
-    // Verificar si se alcanzó el final del carrusel
-    if (
-      direction === 1 &&
-      carruselElement.scrollLeft + carruselWidth >= carruselElement.scrollWidth - carruselWidth
-    ) {
-      // Volver al inicio del carrusel
-      carruselElement.scrollTo({ left: 0, behavior: 'smooth' });
+  ngOnInit(): void {
+    this.cargarProyectos();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
     }
   }
-  
+
+  cargarProyectos(): void {
+    this.proyectoService.lista().subscribe(data => {
+      this.proyectos = data;
+    });
+  }
+
+  delete(id?: number) {
+    if (id !== undefined) {
+      this.proyectoService.delete(id).subscribe(
+        data => {
+          this.cargarProyectos();
+        },
+        err => {
+          alert('No se pudo borrar el proyecto');
+        }
+      );
+    }
+  }
 }

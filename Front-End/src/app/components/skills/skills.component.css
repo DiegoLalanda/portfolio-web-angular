@@ -1,156 +1,86 @@
 /*---------------sección skills------------------*/
-.skills{
+.skills {
     padding: 100px 20px;
 }
-.skills .container_section{
+
+.skills .container_section {
     max-width: 1100px;
     margin: auto;
 }
 
-.skills .fila{
+.skills .fila {
+    flex-wrap: wrap;
     display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
-.skills .fila .col{
-width: 50%;
-padding: 0 20px;
+
+.skills .fila .col {
+    width: 50%;
+    padding: 0 20px;
 }
-.skills .fila .col h3{
-    margin-bottom: 20px;
-    font-size: 25px;
-    font-weight: 600;
-}
-.skills .skill span {
-    font-weight: bold;
+
+.circle-container {
     display: block;
-    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 10px 0px;
 }
 
-/*Barra de progreso*/
+/*Botón de edicion*/
 
-.skills .skill .barra-skill {
-    height: 8px;
-    width: 80%;
-    background-color: var(--color-2);
+.editExperiencia {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--color-1);
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--color-1);
     position: relative;
-    margin-bottom: 30px;
+    z-index: 10;
+    border-radius: 10px;
+    justify-content: center;
+    transition: 0.5s;
 }
-.skills .skill .progreso{
-    background-color: var(--color-1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 8px;
+
+.editExperiencia:hover {
+    background-color: var(--color-2);
 }
-.skills .skill .barra-skill span {
-    position: absolute;
-    height: 40px;
-    width: 40px;
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#edit-cbutton {
     background-color: var(--color-1);
-    border-radius: 50px;
-    line-height: 40px;
+    /* color de fondo del botón */
+    border-color: #ff3cce;
+    border-radius: 100%;
+    /* borde redondo */
+    color: white;
+    /* color del texto del botón */
+    font-size: 12px;
+    /* tamaño del texto */
+    padding: 5px 8px;
+    /* espacio interno del botón */
     text-align: center;
-    top: -17px;
-    right: -15px;
-    font-size: 14px;
-}
-
-/*animación Barra de progreso*/
-/*las clases se agregaran dinamicamente en javascript*/
-
-.skills .skill .javascript{
-width: 0%;
-animation: 2s javascript forwards;
-}
-@keyframes javascript {
-    0%{width: 0%;}
-    100%{width: 75%;}
-}
-
-.skills .skill .htmlcss{
-    width: 0%;
-    animation: 2s htmlcss forwards;
-}  
-@keyframes htmlcss {
-    0%{width: 0%;}
-    100%{width: 80%;}
-}
-
-.skills .skill .photoshop{
-    width: 0%;
-    animation: 2s photoshop forwards;
-}  
-@keyframes photoshop {
-    0%{width: 0%;}
-    100%{width: 90%;}
-}
-.skills .skill .bootstrap{
-    width: 0%;
-    animation: 2s bootstrap forwards;
-}  
-@keyframes bootstrap {
-    0%{width: 0%;}
-    100%{width: 70%;}
-}
-.skills .skill .angular{
-    width: 0%;
-    animation: 2s angular forwards;
-}  
-@keyframes angular {
-    0%{width: 0%;}
-    100%{width: 50%;}
-}
-.skills .skill .comunicacion{
-    width: 0%;
-    animation: 2s comunicacion forwards;
-}  
-@keyframes comunicacion {
-    0%{width: 0%;}
-    100%{width: 80%;}
-}
-.skills .skill .trabajoenequipo{
-    width: 0%;
-    animation: 2s trabajoenequipo forwards;
-}  
-@keyframes trabajoenequipo {
-    0%{width: 0%;}
-    100%{width: 60%;}
-}
-.skills .skill .dedicacion{
-    width: 0%;
-    animation: 2s dedicacion forwards;
-}  
-@keyframes dedicacion {
-    0%{width: 0%;}
-    100%{width: 65%;}
-}
-.skills .skill .autonomia{
-    width: 0%;
-    animation: 2s autonomia forwards;
-}  
-@keyframes autonomia {
-    0%{width: 0%;}
-    100%{width: 70%;}
-}
-.skills .skill .liderazgo{
-    width: 0%;
-    animation: 2s liderazgo forwards;
-}  
-@keyframes liderazgo {
-    0%{width: 0%;}
-    100%{width: 75%;}
+    /* centrar el texto del botón */
+    text-decoration: none;
+    /* eliminar la subrayado del texto */
+    cursor: pointer;
+    /* cambiar el cursor al pasar sobre el botón */
+    position: relative;
+    /* posicion del elemnento */
+    margin: 10px 10px 0 0;
 }
 
 /*------------ seccion responsive-----------------------------*/
-
-@media screen and (max-width:700px){
-    .skills .fila {
-        display: block;
-    }
-    .skills .fila .col {
-        width: 100%;
-    }
-    .skills .fila .col .barra-skill {
-        width: 100%;
-    }
-
-}

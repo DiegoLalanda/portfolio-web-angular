@@ -1,6 +1,6 @@
 /*----------------------header---------------------*/
 
-.container_header{
+.container_header {
     background: white;
     width: 100%;
     top: 0;
@@ -8,10 +8,11 @@
     z-index: 99;
     position: fixed;
 }
-.container_header header{
+
+.container_header header {
     max-width: 1100px;
     margin: auto;
-    display: flex   ;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
@@ -19,12 +20,14 @@
 
 /*Modificando posición del panel de navegacion (a cerca de, experiencia, etc)*/
 
-.container_header nav ul{
-display:flex;
-list-style: none;
+.container_header nav ul {
+    display: flex;
+    list-style: none;
 }
 
-.item_menu_link, #button_login, #button_logout{ 
+.item_menu_link,
+#button_login,
+#button_logout {
     color: var(--color-3);
     text-decoration: none;
     text-transform: capitalize;
@@ -40,19 +43,21 @@ list-style: none;
 .container_header nav ul li {
     counter-increment: item 1;
 }
-.item_menu_link::before{
-    content: "0" counter(item) "."; 
+
+.item_menu_link::before {
+    content: "0" counter(item) ".";
     margin-right: 5px;
     color: var(--color-1);
 }
 
 /*cada vez que el cursor pasa por encima, la letra cambia de color*/
 
-.item_menu_link:hover{
-    color:var(--color-1)
+.item_menu_link:hover {
+    color: var(--color-1)
 }
 
-#button_login, #button_logout{
+#button_login,
+#button_logout {
     padding: 0px 10px;
     border: none;
     font-size: 16px;
@@ -66,44 +71,48 @@ list-style: none;
 
 /*css del logo*/
 
-.container_logo{
+.container_logo {
     width: 150px;
     z-index: 1;
 }
-.container_logo img{
+
+.container_logo img {
     width: 100%;
 }
 
 /*modificando el icono de navegacion*/
 
 .nav_responsive {
-background-color: var(--color-1);
-color: white;
-padding: 5px 10px;
-border-radius: 5px;
-cursor: pointer;
-display: none;
- }
+    background-color: var(--color-1);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
 
- /*------------ seccion responsive-----------------------------*/
-@media screen and (max-width:980px){
-    nav{
+/*------------ seccion responsive-----------------------------*/
+@media screen and (max-width:980px) {
+    nav {
         display: none;
     }
-    .nav_responsive{
+
+    .nav_responsive {
         display: block;
-        z-index: 1;}
-    nav.responsive{
+        z-index: 1;
+    }
+
+    nav.responsive {
         display: block;
         position: absolute;
         right: 0;
-        top:0;
+        top: 0;
         backdrop-filter: blur(5px);
         border-radius: 10px;
         width: 100%;
-        } 
+    }
 
-    nav.responsive ul{
+    nav.responsive ul {
         display: flex;
         flex-direction: column;
         width: 50%;
@@ -111,20 +120,22 @@ display: none;
         justify-content: center;
         background-color: var(--color-2);
         margin-left: auto;
-     }
-     nav.responsive ul li{
+    }
+
+    nav.responsive ul li {
         padding: 15px 0;
-        text-align: center; 
-    } 
-    .item_menu_link::before{
+        text-align: center;
+    }
+
+    .item_menu_link::before {
         display: block;
         text-align: center;
     }
 
 }
 
-@media screen and (max-width:500px){
-    nav.responsive ul{
+@media screen and (max-width:500px) {
+    nav.responsive ul {
         width: 100%;
     }
 }

@@ -1,0 +1,28 @@
+<!-- experiencia -->
+<div class="container-editexperiencia" *ngIf="persona">
+    <form class="form-editexperiencia" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <h2>Persona</h2>
+
+
+        <label for="nombre">
+            <h4 class="nombreE">Nombre de la persona</h4>
+        </label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre" required>
+
+        <label for="apellido">
+            <h4 class="nombreE">Apellido de la persona</h4>
+        </label>
+        <input type="text" id="apellido" name="apellido" [(ngModel)]="persona.apellido" required>
+
+        <label for="descripcion">
+            <h4 class="descripcionE">Descripción</h4>
+        </label>
+        <input type="text" id="descripcion" name="descripcion" [(ngModel)]="persona.descripcion" required>
+
+        <button class="editExperiencia">
+            Actualizar datos
+        </button>
+
+
+    </form>
+</div>

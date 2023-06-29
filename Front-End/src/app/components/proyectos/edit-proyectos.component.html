@@ -1,0 +1,43 @@
+<!-- proyectos -->
+<div class="container-editexperiencia" *ngIf="proyecto">
+    <form class="form-editexperiencia" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <h2>Proyecto</h2>
+        <div class="item der">
+            <label for="nombre">
+                <h4 class="nombre">Nombre del proyecto</h4>
+            </label>
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="proyecto.nombre" required>
+
+            <label for="descripcion">
+                <h4 class="descripcion">Descripción</h4>
+            </label>
+            <input type="text" id="descripcion" name="descripcion" [(ngModel)]="proyecto.descripcion" required>
+
+            <label for="lenguajes">
+                <h4 class="lenguajes">Lenguajes</h4>
+            </label>
+            <input type="text" id="lenguajes" name="lenguajes" [(ngModel)]="proyecto.lenguajes" required>
+
+            <label for="linkRepositorio">
+                <h4 class="linkRepositorio">Enlace al repositorio</h4>
+            </label>
+            <input type="text" id="linkRepositorio" name="linkRepositorio" [(ngModel)]="proyecto.linkRepositorio"
+                required>
+
+            <label for="imagen">
+                <h4 class="imagen">Imagen</h4>
+            </label>
+
+            <input type="file" id="imagen" name="imagen" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
+
+            <div class="imagen_perfil">
+                <img [src]="proyectoImageService.getLatestImageUrl()" width="200px">
+            </div>
+
+            <button class="editProyecto">
+                Actualizar proyecto
+            </button>
+        </div>
+
+    </form>
+</div>

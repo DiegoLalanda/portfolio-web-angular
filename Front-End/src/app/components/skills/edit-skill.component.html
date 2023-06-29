@@ -1,0 +1,22 @@
+<!-- experiencia -->
+<div class="container-editexperiencia" *ngIf="skill">
+    <form class="form-editexperiencia" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <h2>Skill</h2>
+        <div class="item der">
+
+            <label for="nombreE">
+                <h4 class="nombreE">Nombre de la Skill</h4>
+            </label>
+            <input type="text" id="nombreE" name="nombreE" [(ngModel)]="skill.nombre" required>
+
+            <label for="descripcionE">
+                <h4 class="descripcionE">Porcentaje</h4>
+            </label>
+            <input type="text" id="descripcionE" name="descripcionE" [(ngModel)]="skill.porcentaje" required>
+
+            <button class="editExperiencia">
+                Actualizar experiencia
+            </button>
+        </div>
+    </form>
+</div>

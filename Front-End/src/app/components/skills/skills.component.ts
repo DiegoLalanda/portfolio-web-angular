@@ -1,4 +1,7 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Skill } from 'src/app/model/skill';
+import { SkillService } from 'src/app/service/skill.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-skills',
@@ -6,30 +9,37 @@ import { Component, OnInit, ElementRef } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
+  skill: Skill[] = [];
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private skillS: SkillService, private tokenService: TokenService) { }
+  isLogged = false;
 
   ngOnInit(): void {
-    window.addEventListener('scroll', this.animacionSkills.bind(this));
-  }
-
-  animacionSkills(): void {
-    const skillsElement = this.elementRef.nativeElement.querySelector("#skills");
-    const distanciaSkills = window.innerHeight - skillsElement.getBoundingClientRect().top;
-    
-    if (distanciaSkills >= 300) {
-      const habilidades = this.elementRef.nativeElement.getElementsByClassName("progreso");
-      habilidades[0].classList.add("javascript");
-      habilidades[1].classList.add("htmlcss");
-      habilidades[2].classList.add("photoshop");
-      habilidades[3].classList.add("bootstrap");
-      habilidades[4].classList.add("angular");
-      habilidades[5].classList.add("comunicacion");
-      habilidades[6].classList.add("trabajoenequipo");
-      habilidades[7].classList.add("dedicacion");
-      habilidades[8].classList.add("autonomia");
-      habilidades[9].classList.add("liderazgo");
+    this.cargarSkills();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
     }
   }
 
+  cargarSkills(): void {
+    this.skillS.lista().subscribe(
+      data => {
+        this.skill = data;
+      }
+    )
+  }
+
+  delete(id: number) {
+    if (id != undefined) {
+      this.skillS.delete(id).subscribe(
+        data => {
+          this.cargarSkills();
+        }, err => {
+          alert("No se pudo borrar la skill");
+        }
+      )
+    }
+  }
 }

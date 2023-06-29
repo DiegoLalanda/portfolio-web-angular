@@ -1,0 +1,28 @@
+<div class="col izquierda">
+    <h3>Educación</h3>
+    <button type="button" class="editExperiencia" routerLink="/nuevaedu" *ngIf="isLogged">
+        Nueva educación
+    </button>
+    <div class="item izq" *ngFor="let Educacion of educacion">
+        <div class="logo_institucion">
+            <img src="{{Educacion.imagenInstitucion}}" alt="insititución">
+        </div>
+        <h4>
+            {{Educacion.nombreE}}
+        </h4>
+        <span class="lugar">{{Educacion.nombreInstitucion}}</span>
+        <span class="fecha">{{Educacion.anio}}</span>
+        <p>
+            {{Educacion.descripcionE}}
+        </p>
+        <div class="botones" *ngIf="isLogged">
+            <button id="edit-cbutton" class="edit-button" routerLink="/editedu/{{Educacion.id}}"><i
+                    class="fa-solid fa-pen-to-square"></i></button>
+            <button id="edit-cbutton" class="delete-button" (click)="delete(Educacion.id)"><i
+                    class="fa-solid fa-trash"></i></button>
+        </div>
+        <div class="conectori">
+            <div class="circuloi"></div>
+        </div>
+    </div>
+</div>

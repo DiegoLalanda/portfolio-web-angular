@@ -1,0 +1,43 @@
+<div class="container-editexperiencia" *ngIf="educacion">
+    <form class="form-editexperiencia" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <h2>Educación</h2>
+        <div class="item der">
+
+            <label for="nombreE">
+                <h4 class="nombreE">Nombre de la educación</h4>
+            </label>
+            <input type="text" id="nombreE" name="nombreE" [(ngModel)]="educacion.nombreE" required>
+
+            <label for="descripcionE">
+                <h4 class="descripcionE">Descripción</h4>
+            </label>
+            <input type="text" id="descripcionE" name="descripcionE" [(ngModel)]="educacion.descripcionE" required>
+
+            <label for="nombreInstitucion">
+                <h4 class="nombreInstitucion">Nombre de la institución</h4>
+            </label>
+            <input type="text" id="nombreInstitucion" name="nombreInstitucion" [(ngModel)]="educacion.nombreInstitucion"
+                required>
+
+            <label for="anio">
+                <h4 class="anio">Año</h4>
+            </label>
+            <input type="text" id="anio" name="anio" [(ngModel)]="educacion.anio" required>
+
+            <label for="imagenInstitucion">
+                <h4 class="imagenInstitucion">Logo de la institución</h4>
+            </label>
+            <input type="file" id="imagenInstitucion" name="imagenInstitucion" (change)="uploadImage($event)"
+                accept=".jpg, .jpeg, .png">
+
+            <div class="imagen_Institucion">
+                <img [src]="imagenInstitucionService.getLatestImageUrl()" width="200px">
+            </div>
+
+            <button class="editExperiencia">
+                Actualizar educación
+            </button>
+        </div>
+
+    </form>
+</div>

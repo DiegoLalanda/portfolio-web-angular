@@ -1,0 +1,160 @@
+.col {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.col h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+
+.derecha {
+    border-left: 2px solid var(--color-2);
+    margin-left: 5px;
+}
+
+.item {
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: var(--color-4);
+    position: relative;
+    border-radius: 10px;
+}
+
+.item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.item .lugar {
+    color: var(--color-1);
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.item .fecha {
+    color: var(--color-1);
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.item p {
+    line-height: 25px;
+}
+
+/*ubicacion del logo*/
+
+.logo_institucion {
+    max-width: 100px;
+    float: right;
+}
+
+.logo_institucion img {
+    display: block;
+    width: 100%;
+    height: auto;
+    float: right;
+}
+
+/*decoración con lineas y circulos*/
+
+.der {
+    border-left: 2px solid var(--color-1);
+    margin-left: 20px;
+}
+
+.conectord {
+    height: 2px;
+    background-color: var(--color-1);
+    width: 45px;
+    position: absolute;
+    top: 50%;
+    left: -45px;
+    z-index: 5;
+}
+
+.conectord .circulod {
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background-color: var(--color-1);
+    float: left;
+    position: relative;
+    bottom: 4px;
+}
+
+/*Botón de edicion*/
+
+.editExperiencia {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--color-1);
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--color-1);
+    position: relative;
+    z-index: 10;
+    border-radius: 10px;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.editExperiencia:hover {
+    background-color: var(--color-2);
+}
+
+#edit-cbutton {
+    background-color: var(--color-1);
+    /* color de fondo del botón */
+    border-color: #ff3cce;
+    border-radius: 100%;
+    /* borde redondo */
+    color: white;
+    /* color del texto del botón */
+    font-size: 12px;
+    /* tamaño del texto */
+    padding: 5px 8px;
+    /* espacio interno del botón */
+    text-align: center;
+    /* centrar el texto del botón */
+    text-decoration: none;
+    /* eliminar la subrayado del texto */
+    cursor: pointer;
+    /* cambiar el cursor al pasar sobre el botón */
+    position: relative;
+    /* posicion del elemnento */
+    margin: 10px 10px 0 0;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*------------ seccion responsive-----------------------------*/
+
+@media screen and (max-width:800px) {
+    .logo_institucion {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo_institucion img {
+        width: 50%;
+        height: auto;
+    }
+}
