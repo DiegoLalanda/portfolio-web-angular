@@ -30,6 +30,8 @@
 
             <input type="file" id="imagen" name="imagen" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
 
+            <p class="message">Vista previa.<a href="#"> Por favor, espere a que cargue la imagen</a></p>
+
             <div class="imagen_perfil">
                 <img [src]="proyectoImageService.getLatestImageUrl()" width="200px">
             </div>

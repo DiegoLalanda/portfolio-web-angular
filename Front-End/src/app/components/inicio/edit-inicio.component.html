@@ -20,6 +20,9 @@
         <input type="file" id="img" name="img" [(ngModel)]="persona.img" required (change)="uploadImage($event)"
             accept=".jpg, .jpeg, .png">
 
+        <p class="message">Vista previa.<a href="#"> Por favor, espere a que cargue la imagen</a></p>
+
+
         <div class="imagen_perfil">
             <img [src]="imageService.url" width="200px">
         </div>
@@ -30,6 +33,8 @@
 
         <input type="file" id="banner" name="banner" [(ngModel)]="persona.banner" required
             (change)="uploadBannerImage($event)" accept=".jpg, .jpeg, .png">
+
+        <p class="message">Vista previa.<a href="#"> Por favor, espere a que cargue la imagen.</a></p>
 
         <div class="imagen_banner">
             <img [src]="bannerService.url" width="200px">

@@ -8,7 +8,8 @@ import { Contacto } from '../model/contacto';
 })
 export class ContactoService {
 
-  contactoURL = "http://localhost:8080/contacto/";
+  //contactoURL = "http://localhost:8080/contacto/";
+  contactoURL = "https://backendweb-dl.onrender.com/contacto/";
 
   constructor(private httpClient: HttpClient) { }
 

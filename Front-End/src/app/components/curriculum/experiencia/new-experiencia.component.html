@@ -1,6 +1,6 @@
 <div class="container-editexperiencia">
     <form class="form-editexperiencia" (ngSubmit)="onCreate()" novalidate #f="ngForm">
-        <h2>Nueva experiencia</h2>
+        <h2>Experiencia</h2>
 
         <div class="item der">
             <label for="nombreE">
@@ -28,6 +28,8 @@
             </label>
             <input type="file" id="imagenInstitucion" name="imagenInstitucion" (change)="uploadImage($event)"
                 accept=".jpg, .jpeg, .png">
+
+            <p class="message">Vista previa.<a href="#"> Por favor, espere a que cargue la imagen</a></p>
 
             <div class="imagen_Institucion">
                 <img [src]="imagenInstitucionService.getLatestImageUrl()" width="200px">
